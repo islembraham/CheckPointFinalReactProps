@@ -17,7 +17,6 @@ const ProfileComponent = ({
             <Card.Text>
               {data.bio}
             </Card.Text>
-            { console.log(data)}
             <Card.Text>
               {data.profession}
             </Card.Text>
