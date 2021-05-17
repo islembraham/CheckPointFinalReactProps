@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import { data } from "./data";
+import ProfileComponent from './Profile/ProfileComponent';
+import { Card } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const  App=()=> {
+  const handelName = (fullName) => {
+    alert(`Hello I am ${fullName}`);
+  };
   return (
+  
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {data.map((data, i) => (
+      <ProfileComponent data={data} key={i}  handelName={handelName}>
+     
+      <Card.Img variant="top" src="https://i1.sndcdn.com/avatars-000495007683-zg65ko-t500x500.jpg"
+          alt=""
+          width="100px"
+          height="10px" />
+        
+
+      </ProfileComponent>
+        ))}
+
     </div>
   );
 }
